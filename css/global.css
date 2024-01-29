@@ -1,0 +1,194 @@
+body {
+    margin: 0;
+}
+
+
+/* Header */
+header {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #0000003b;
+}
+
+header > nav {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    place-items: center;
+}
+
+nav.options {
+    display: flex; 
+}
+
+/* nav bar about us */
+nav.about-us {
+    background-color: #ececec;
+}
+
+.social-media > img {
+    height: 20px;
+    margin: 0px 3px;
+}
+
+nav.options > h4 {
+    padding: 0px 15px;
+    color: black;
+    font-size: x-small;
+    font-weight: lighter;
+    font-family: Arial;
+}
+
+button {
+    font-size: x-small;
+    border-width: 1px;
+    border-radius: 20px;
+    color: white;
+    padding: 7px 13px;
+}
+
+button.sign-up {
+    background-color: #3d3d3d;
+}
+
+button.log-in {
+    background-color: darkred;
+    border-color: darkred
+}
+
+/* nav bar shop options */
+nav.shop-options {
+    background-color: white;
+}
+
+.logo {
+    height: 18px;
+}
+
+nav.options > h3 {
+    padding: 0px 10px;
+    color: darkred;
+    font-size: small;
+    font-weight: lighter;
+    font-family: Arial;
+}
+
+/*banner */
+div.banner {
+    display: flex;
+    height: 400px;
+    background-image: url("../resources/images/banner.jpg");
+    align-items: end;
+}
+
+button.more-information {
+    margin-left: 10%;
+    margin-bottom: 3%;
+    background-color: darkred;
+    font-size: medium;
+}
+
+
+/* City filter */
+div.filter {
+    display: flex;
+    background-color: #ececec;
+    width: 100%;
+    padding: 10px 0px;
+}
+
+div.filter > div {
+    display: flex;
+}
+
+div.city-filter {
+    padding-left: 9%;
+    padding-right: 30px;
+}
+
+div.filter div h3 {
+    color: grey;
+    font-size: small;
+    padding-right: 10px;
+    font-weight: lighter;
+    font-family: Arial;
+}
+
+div.filter div select {
+    background-color: white;
+    border-color: grey;
+    padding: 0px 10px;
+    border-radius: 20px;
+    width: 200px;
+}
+
+
+
+
+/* movies */
+h1 {
+    width: 100%;
+    padding-left: 9%;
+    font-size: xx-large;
+    color: #808080;
+    font-weight: lighter;
+    font-family: Arial;
+}
+
+/*movie-list */
+div.movie-list{
+    display: grid;
+    grid-template-columns: 
+        repeat(
+            auto-fit,
+            minmax(230px, 1fr)
+        );
+    gap: 25px;
+    padding: 0px 10% 30px 10%;
+}
+
+div.movie-list div.poster-container{
+    width: 100%;
+    height: auto;
+}
+
+div.movie-list div.poster-container img{
+    width: 100%;
+    height: auto;
+}
+
+div.movie-list div.poster-container button{
+    border-radius: 0;
+    width: 100%;
+    background-color: darkred;
+    border-color: darkred;
+}
+
+
+/* footer */
+footer {
+    display: grid;
+    grid-template-columns: 15% 15% 15% auto 30%;
+    background-color: #ececec;
+    padding-left: 6%;
+    padding-bottom: 50px;
+}
+
+footer div h2 {
+    color: grey;
+    font-size: medium;
+}
+
+footer div h3 {
+    color: #a1a1a1;
+    font-size: smaller;
+}
+
+footer div.apps > img {
+    height: 17px;
+    margin: 3% 10px
+    
+}

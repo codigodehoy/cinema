@@ -1,0 +1,25 @@
+{
+  "type": "module",
+  "name": "cinema",
+  "version": "1.0.0",
+  "description": "This is the application to test the knowledge gained in the first module of the ioet university 2.0.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "start": "npx http-server -c-1 ."
+  },
+  "jest": {
+    "transform": {}
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.6.4"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
