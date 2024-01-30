@@ -3,7 +3,7 @@ export const API_MOVIE_ID_URL = 'https://moviesdatabase.p.rapidapi.com/titles/{i
 export const OPTIONS = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '<your api key>',
+		'X-RapidAPI-Key':  "af85f7e98fmsh68a23e8bfc72766p17b611jsnd905168b7656",
 		'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
 	}
 };
