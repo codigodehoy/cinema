@@ -1,6 +1,11 @@
 /* Basics elements */
-body {
+:root{
+    --nav-color: darkred;
+}
+
+*{
     margin: 0;
+    padding: 0;
 }
 
 li {
@@ -9,7 +14,7 @@ li {
 }
 
 li > a {
-    color: black;
+    color: var(--nav-color);;
     font-family: Arial;
     font-size: 1rem;
     font-weight: lighter;
@@ -17,21 +22,25 @@ li > a {
     text-decoration: none;
 }
 
+h1 {
+    color: #808080;
+    font-family: Arial;
+    font-size: medium;
+    font-weight: lighter;
+    padding: 5% 10%;
+}
+
 
 /* Header */
 header {
     position: relative;
-    width: 100%;
-    height: auto;
     border-bottom: 1px solid #0000003b;
+    height: 100px;
 }
 
 header > nav {
     display: grid;
-    grid-template-columns: 25% 50% 25%;
-    width: 100%;
-    height: auto;
-    padding: 5px;
+    grid-template-rows: repeat(2, 1fr);
     place-items: center;
 }
 
@@ -39,6 +48,7 @@ header > nav {
 /* nav bar about us */
 nav.about-us {
     background-color: #ececec;
+    height: 60%;
 }
 
 .social-media li > img {
@@ -59,13 +69,14 @@ button.sign-up {
 }
 
 button.log-in {
-    background-color: darkred;
-    border-color: darkred
+    background-color: var(--nav-color);
+    border-color: var(--nav-color)
 }
 
 /* nav bar shop options */
 nav.shop-options {
     background-color: white;
+    height: 40%;
 }
 
 .logo {
@@ -73,43 +84,42 @@ nav.shop-options {
 }
 
 
-/*banner */
 div.banner {
-    display: flex;
-    height: 400px;
-    background-image: url("../resources/images/banner.jpg");
     align-items: end;
+    background-image: url("../resources/images/banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 92px;
 }
 
 button.more-information {
-    margin-left: 10%;
-    margin-bottom: 3%;
-    background-color: darkred;
-    font-size: medium;
+    margin-left: 8%;
+    margin-bottom: 1%;
+    background-color: var(--nav-color);
+    font-size: 5px;
 }
-
 
 /* City filter */
 div.filter {
     display: flex;
+    flex-direction: column;
+    gap: 7px;
     background-color: #ececec;
-    width: 100%;
-    padding: 10px 0px;
+    padding: 10px;
 }
 
 div.filter > div {
     display: flex;
+    padding-left: 5%;
+    gap: 1%;
+    justify-content: space-between;
 }
 
-div.city-filter {
-    padding-left: 9%;
-    padding-right: 30px;
-}
 
-div.filter div h3 {
-    color: grey;
-    font-size: small;
-    padding-right: 10px;
+div.filter div label {
+    color: rgb(45, 44, 44);
+    font-size: medium;
     font-weight: lighter;
     font-family: Arial;
 }
@@ -123,16 +133,6 @@ div.filter div select {
 }
 
 
-/* movies */
-h1 {
-    width: 100%;
-    padding-left: 9%;
-    font-size: xx-large;
-    color: #808080;
-    font-weight: lighter;
-    font-family: Arial;
-}
-
 /*movie-list */
 div.movie-list{
     display: grid;
@@ -143,11 +143,12 @@ div.movie-list{
         );
     gap: 25px;
     padding: 0px 10% 30px 10%;
+    justify-items: center
 }
 
 div.movie-list div.poster-container{
-    width: 100%;
-    height: 440px;
+    width: 70%;
+    height: 300px;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
 }
@@ -158,25 +159,26 @@ div.movie-list div.poster-container:hover{
 
 div.movie-list div.poster-container img{
     width: 100%;
-    height: 400px;
+    height: 260px;
     border-radius: 5px;
 }
 
 div.movie-list div.poster-container button{
     border-radius: 0;
     width: 100%;
-    background-color: darkred;
-    border-color: darkred;
+    background-color: var(--nav-color);
+    border-color: var(--nav-color);
 }
 
 
 /* footer */
+
 footer {
     display: grid;
-    grid-template-columns: 15% 15% 15% auto 30%;
+    grid-template-rows: repeat(5, 1fr);
     background-color: #ececec;
-    padding-left: 6%;
-    padding-bottom: 50px;
+    align-items: center;
+    padding: 10px;
 }
 
 footer div h2 {
@@ -188,9 +190,145 @@ footer div h3 {
     color: #a1a1a1;
     font-size: smaller;
 }
+footer > div{
+    text-align: center;
+}
 
 footer div.apps > img {
     height: 17px;
     margin: 3% 10px
+}
+
+
+
+/* Media queries: Small devices */
+@media (min-width: 576px){
+    div.banner {
+        height: 120px
+    }
+
+    button.more-information {
+        margin-left: 10%;
+        margin-bottom: 1%;
+        font-size: x-small;
+    }
+
+    h1 {
+        padding: 2% 10%;
+        font-size: medium;
+    }
+
+    /*movie-list */
+    div.movie-list div.poster-container{
+        width: 90%;
+        height: 340px;
+    }
+
+    div.movie-list div.poster-container img{
+        height: 300px;
+    }
+
+    div.movie-list div.poster-container button{
+        width: 100%;
+        background-color: var(--nav-color);
+        border-color: var(--nav-color);
+    }
+}
+
+
+/* Medium devices */
+@media (min-width: 768px){
+    div.banner {
+        height: 170px
+    }
+
+    /* City filter */
+    div.filter {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    div.filter > div {
+        display: block;
+        padding-left: 2%;
+    }
+
+    div.filter div label {
+        font-size: medium;
+        padding: 0 5px;
+    }
+
+    div.login{
+        justify-self: end;
+        padding-right: 4%;
+    }
+
+    header > nav {
+        grid-template-columns: 25% 75%;
+        grid-template-rows: none;
+    }
+
+    footer {
+        grid-template-columns: 15% 15% 15% auto 30%;
+        grid-template-rows: none;
+        padding-left: 6%;
+        padding-bottom: 50px;
+        height: 100px;
+    }
+}
+
+/* Large devices */
+@media (min-width: 992px){
+    div.banner {
+        height: 200px
+    }
+
+    button.more-information {
+        font-size: small;
+    }
+
+    h1 {
+        padding: 2% 13%;
+        font-size: x-large;
+    }
+
+    div.filter {
+        justify-content: space-around;
+    }
+
+    div.filter div label {
+        font-size: large;
+    }
+}
+
+@media (min-width: 1200px){
+    div.banner {
+        height: 400px;
+    }
     
+    button.more-information {
+        margin-bottom: 3%;
+        font-size: medium;
+    }
+
+    h1 {
+        font-size: xx-large;
+    }
+
+    /*movie-list */
+    div.movie-list div.poster-container{
+        width: 100%;
+        height: 440px;
+    }
+
+    div.movie-list div.poster-container img{
+        height: 400px;
+    }
+
+    div.movie-list div.poster-container button{
+        width: 100%;
+        background-color: var(--nav-color);
+        border-color: var(--nav-color);
+    }
 }
