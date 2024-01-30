@@ -1,5 +1,20 @@
+/* Basics elements */
 body {
     margin: 0;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+li > a {
+    color: black;
+    font-family: Arial;
+    font-size: 1rem;
+    font-weight: lighter;
+    padding: 0 10px;
+    text-decoration: none;
 }
 
 
@@ -20,26 +35,15 @@ header > nav {
     place-items: center;
 }
 
-nav.options {
-    display: flex; 
-}
 
 /* nav bar about us */
 nav.about-us {
     background-color: #ececec;
 }
 
-.social-media > img {
+.social-media li > img {
     height: 20px;
     margin: 0px 3px;
-}
-
-nav.options > h4 {
-    padding: 0px 15px;
-    color: black;
-    font-size: x-small;
-    font-weight: lighter;
-    font-family: Arial;
 }
 
 button {
@@ -68,13 +72,6 @@ nav.shop-options {
     height: 18px;
 }
 
-nav.options > h3 {
-    padding: 0px 10px;
-    color: darkred;
-    font-size: small;
-    font-weight: lighter;
-    font-family: Arial;
-}
 
 /*banner */
 div.banner {
@@ -126,8 +123,6 @@ div.filter div select {
 }
 
 
-
-
 /* movies */
 h1 {
     width: 100%;
@@ -152,12 +147,19 @@ div.movie-list{
 
 div.movie-list div.poster-container{
     width: 100%;
-    height: auto;
+    height: 440px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+div.movie-list div.poster-container:hover{
+    transform: scale(1.1);
 }
 
 div.movie-list div.poster-container img{
     width: 100%;
-    height: auto;
+    height: 400px;
+    border-radius: 5px;
 }
 
 div.movie-list div.poster-container button{
