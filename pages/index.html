@@ -1,126 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/global.css" />
     <title>Document</title>
     <script src="../javascript/get-movies.js" type="module"></script>
     <script src="../javascript/constants.js" type="module"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav class="about-us">
-            <ul class="social-media">
-                <li><img src="../resources/icons/facebook.png"></li>
-                <li><img src="../resources/icons/twitter.png"></li>
-                <li><img src="../resources/icons/instagram.png"></li>
-            </ul>
-            <div></div>
-            <div class="login">
-                <button class="sign-up">Sign Up</button>
-                <button class="log-in">Log in</button>
-            </div>
-        </nav>
-        <nav class="shop-options">
-            <img class="logo" src="../images/cinemark_logo.png" />
-            <ul class="options">
-                <li><a href="#">Billboard</a></li>
-                <li><a href="#">Theaters</a></li>
-                <li><a href="#">Snackbar</a></li>
-                <li><a href="#">Promotions</a></li>
-            </ul>
-        </nav>
+      <nav class="about-us">
+        <ul class="social-media">
+          <li><img src="../resources/icons/facebook.png" /></li>
+          <li><img src="../resources/icons/twitter.png" /></li>
+          <li><img src="../resources/icons/instagram.png" /></li>
+        </ul>
+        <div class="login">
+          <button class="sign-up">Sign Up</button>
+          <button class="log-in">Log in</button>
+        </div>
+      </nav>
+      <nav class="shop-options">
+        <img class="logo" src="../images/cinemark_logo.png" />
+        <ul class="options">
+          <li><a href="#">Billboard</a></li>
+          <li><a href="#">Theaters</a></li>
+          <li><a href="#">Snackbar</a></li>
+          <li><a href="#">Promotions</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <div class="banner">
-            <button class="more-information">More Information</button>
-        </div>
+      <div class="banner">
+        <button class="more-information">More Information</button>
+      </div>
 
-        <div class="filter">
-            <div class="city-filter">
-                <h3>You are in:</h2>
-                    <select required aria-placeholder="Value2">
-                        <option value="None" hidden>None</option>
-                        <option value="value2">Value 2</option>
-                        <option value="value3">Value 3</option>
-                    </select>
-            </div>
-            <div class="local-filter">
-                <h3>Theaters:</h2>
-                    <select required aria-placeholder="Value2">
-                        <option value="None" hidden>None</option>
-                        <option value="value2">Value 2</option>
-                        <option value="value3">Value 3</option>
-                    </select>
-            </div>
+      <div class="filter">
+        <div class="city-filter">
+          <label for="citySelect">You are in:</label>
+          <select id="citySelect" required aria-placeholder="Value2">
+            <option value="None" hidden>None</option>
+            <option value="value2">Value 2</option>
+            <option value="value3">Value 3</option>
+          </select>
         </div>
-
-        <h1>Billboard</h1>
-        <div class="movie-list" id="movie-list">
+        <div class="local-filter">
+          <label for="localSelect">Theaters:</label>
+          <select id="localSelect" required aria-placeholder="Value2">
+            <option value="None" hidden>None</option>
+            <option value="value2">Value 2</option>
+            <option value="value3">Value 3</option>
+          </select>
         </div>
+      </div>
 
+      <h1>Billboard</h1>
+      <div class="movie-list" id="movie-list"></div>
     </main>
-
-</body>
-<script type="module">
-    import { get_movies } from '../javascript/get-movies.js';
-
-    const createImag = (movie) => {
-        const imag = movie.primaryImage.url
-        const alternativeText = movie.primaryImage.caption.plainText
-        const imgElement = document.createElement("img");
-        imgElement.src = imag
-        imgElement.alt = alternativeText
-        return imgElement
-    }
-
-
-    get_movies()
-        .then((data) => {
-            data.map((movie) => {
-                const container = document.createElement("div")
-                container.className = "poster-container"
-
-                const imgElement = createImag(movie)
-                container.appendChild(imgElement)
-
-                const buttonElement = document.createElement("button")
-                buttonElement.textContent = "View"
-                buttonElement.className = "schedules"
-                buttonElement.setAttribute('data-movie-id', movie.id)
-                container.appendChild(buttonElement)
-
-                const element = document.getElementById("movie-list");
-                element.appendChild(container);
-            })
-        });
-</script>
-<footer>
-    <div class="about-us">
+    <footer>
+      <div class="about-us">
         <h2>About</h2>
         <h3>Who are we?</h3>
         <h3>Terms and Conditions</h3>
-    </div>
-    <div class="contact-us">
+      </div>
+      <div class="contact-us">
         <h2>Contact us</h2>
         <h3>FAQs</h3>
-    </div>
-    <div class="maketing-empresarial">
+      </div>
+      <div class="maketing-empresarial">
         <h2>Marketing</h2>
         <h3>Services</h3>
-    </div>
-    <div class="downloads">
+      </div>
+      <div class="downloads">
         <h2>Download our App</h2>
-    </div>
-    <div class="apps">
-        <img src="../resources/icons/facebook-red.png" alt="">
-        <img src="../resources/icons/twitter-red.png" alt="">
-        <img src="../resources/icons/instagram-red.png" alt="">
-    </div>
-</footer>
+      </div>
+      <div class="apps">
+        <img src="../resources/icons/facebook-red.png" alt="" />
+        <img src="../resources/icons/twitter-red.png" alt="" />
+        <img src="../resources/icons/instagram-red.png" alt="" />
+      </div>
+    </footer>
+    <script type="module">
+      import { get_movies } from "../javascript/get-movies.js";
 
+      const createImag = (movie) => {
+        const imag = movie.primaryImage.url;
+        const alternativeText = movie.primaryImage.caption.plainText;
+        const imgElement = document.createElement("img");
+        imgElement.src = imag;
+        imgElement.alt = alternativeText;
+        return imgElement;
+      };
+
+      get_movies().then((data) => {
+        data.map((movie) => {
+          const container = document.createElement("div");
+          container.className = "poster-container";
+
+          const imgElement = createImag(movie);
+          container.appendChild(imgElement);
+
+          const buttonElement = document.createElement("button");
+          buttonElement.textContent = "View";
+          buttonElement.className = "schedules";
+          buttonElement.setAttribute("data-movie-id", movie.id);
+          container.appendChild(buttonElement);
+
+          const element = document.getElementById("movie-list");
+          element.appendChild(container);
+        });
+      });
+    </script>
+  </body>
 </html>
