@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/global.css" />
     <title>Document</title>
-    <script src="../javascript/get-movies.js" type="module"></script>
-    <script src="../javascript/constants.js" type="module"></script>
+    <script src="../javascript/index.js" type="module"></script>
   </head>
 
   <body>
@@ -83,36 +82,5 @@
         <img src="../resources/icons/instagram-red.png" alt="" />
       </div>
     </footer>
-    <script type="module">
-      import { get_movies } from "../javascript/get-movies.js";
-
-      const createImag = (movie) => {
-        const imag = movie.primaryImage.url;
-        const alternativeText = movie.primaryImage.caption.plainText;
-        const imgElement = document.createElement("img");
-        imgElement.src = imag;
-        imgElement.alt = alternativeText;
-        return imgElement;
-      };
-
-      get_movies().then((data) => {
-        data.map((movie) => {
-          const container = document.createElement("div");
-          container.className = "poster-container";
-
-          const imgElement = createImag(movie);
-          container.appendChild(imgElement);
-
-          const buttonElement = document.createElement("button");
-          buttonElement.textContent = "View";
-          buttonElement.className = "schedules";
-          buttonElement.setAttribute("data-movie-id", movie.id);
-          container.appendChild(buttonElement);
-
-          const element = document.getElementById("movie-list");
-          element.appendChild(container);
-        });
-      });
-    </script>
   </body>
 </html>

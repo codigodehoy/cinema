@@ -1,6 +1,6 @@
 import { OPTIONS, API_URL } from "./constants.js";
 
-export const get_movies = async() => {
+const get_movies = async() => {
   try {
     const response = await fetch(API_URL, OPTIONS);
     const result = await response.json();
@@ -9,3 +9,5 @@ export const get_movies = async() => {
     console.error(error);
   }
 }
+
+export default get_movies;
